@@ -75,8 +75,8 @@ class Connection:
 
     def close(self):
         self.is_open = False
+	self.__transport.close()
         self.__listener_thread.join()
-        self.__transport.close()
 
     def register_hub(self, name):
         if name not in self.__hubs:
