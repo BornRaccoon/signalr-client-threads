@@ -22,7 +22,7 @@ class Transport:
         url = self.__get_base_url(self._connection,
                                   'negotiate',
                                   connectionData=self._connection.data)
-        negotiate = self._session.get(url)
+        negotiate = self._session.get(url, timeout=5)
 
         negotiate.raise_for_status()
 
